@@ -10,7 +10,7 @@ function ColorMyPencils(color)
         telescope = true,
         harpoon = true,
         mason = true,
-        treesitter = true,
+        treesitter = true, -- https://github.com/catppuccin/nvim
     },
   })
 

@@ -39,4 +39,32 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+-- Configuration for Java
+--[[local jdtls = require('jdtls')
+
+local function nnoremap(rhs, lhs, bufopts, desc)
+  bufopts.desc = desc
+  vim.keymap.set("n", rhs, lhs, bufopts)
+end
+
+local on_attach = function(client, bufnr)
+  -- Regular Neovim LSP client keymappings
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  nnoremap('gD', vim.lsp.buf.declaration, bufopts, "Go to declaration")
+  nnoremap('gd', vim.lsp.buf.definition, bufopts, "Go to definition")
+  nnoremap('<space>ca', vim.lsp.buf.code_action, bufopts, "Code actions")
+  vim.keymap.set('v', "<space>ca", "<ESC><CMD>lua vim.lsp.buf.range_code_action()<CR>",
+    { noremap=true, silent=true, buffer=bufnr, desc = "Code actions" })
+  nnoremap('<space>f', function() vim.lsp.buf.format { async = true } end, bufopts, "Format file")
+
+  -- Java extensions provided by jdtls
+  nnoremap("<C-o>", jdtls.organize_imports, bufopts, "Organize imports")
+  nnoremap("<space>ev", jdtls.extract_variable, bufopts, "Extract variable")
+  nnoremap("<space>ec", jdtls.extract_constant, bufopts, "Extract constant")
+  vim.keymap.set('v', "<space>em", [[<ESC><CMD>lua require('jdtls').extract_method(true)<CR>]]
+  --,
+    --{ noremap=true, silent=true, buffer=bufnr, desc = "Extract method" })
+--end
+
+
 lsp.setup()

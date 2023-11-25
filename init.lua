@@ -92,12 +92,7 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
-  -- require 'kickstart.plugins.autoformat', (plugin made by T-J)
-  -- require 'kickstart.plugins.debug',
-
-  -- to add plugin create file in lua/custom/plugins and repuire them here
-
-  { import = 'custom.plugins' },
+  { import = 'plugins' },
 }, {})
 
 require('options')

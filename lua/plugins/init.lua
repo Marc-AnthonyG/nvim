@@ -1,24 +1,16 @@
 -- [[
 -- Add plugins that doesn't need configuration here
--- ]] 
+-- ]]
 return {
   'ThePrimeagen/vim-be-good',
 
   -- Git related plugins
   'tpope/vim-fugitive', -- Integration with git
-  'tpope/vim-rhubarb', -- Allow completion from git information such as issue etc.
+  'tpope/vim-rhubarb',  -- Allow completion from git information such as issue etc.
 
-  'tpope/vim-sleuth', -- Basicly copy indentation method of the current working directory
+  'tpope/vim-sleuth',   -- Basicly copy indentation method of the current working directory
 
-  { 'folke/which-key.nvim', opts = {}},
-  -- Theme inspired by Atom
-  {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  { 'folke/which-key.nvim',                opts = {} },
 
   -- the line you can see at the bottom with the indication of the mode
   {
@@ -26,7 +18,7 @@ return {
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },

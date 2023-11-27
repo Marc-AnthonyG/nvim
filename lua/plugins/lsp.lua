@@ -35,20 +35,6 @@ return {
 			-- Lesser used LSP functionality
 			nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-			-- java
-			nmap('<C-A-c>', function()
-				vim.lsp.buf.execute_command({
-					command = "java.executeCommand",
-					arguments = {
-						"org.eclipse.jdt.ls.core.commands.organizeImports",
-						"--applySaveActions",
-						"org.eclipse.jdt.ls.core.organizeImports",
-						"--select"
-					},
-					title = ""
-				})
-			end, '[E]xtract [V]ariable to Constant')
-
 			-- Create a command `:Format` local to the LSP buffer
 			vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
 				vim.lsp.buf.format()

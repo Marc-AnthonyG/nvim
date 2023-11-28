@@ -25,15 +25,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure plugins ]]
-require('lazy').setup({
-  require 'plugins.init',
-  require 'plugins.gitsigns',
-  require 'plugins.treesitter',
-  require 'plugins.telescope',
-  require 'plugins.lsp',
-  require 'plugins.autocompletion',
-  require 'plugins.colors',
-}, {})
+require('lazy').setup({import = 'plugins'}, {})
 
 require('options')
 

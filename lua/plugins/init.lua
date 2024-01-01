@@ -25,6 +25,7 @@ return {
     },
   },
 
+  'nvim-lua/plenary.nvim',
   --Add indentation to blank line See `:help ibl`
   --{'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 

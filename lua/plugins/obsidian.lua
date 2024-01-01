@@ -17,6 +17,5 @@ return {
         path = "~/repository/knowledgeBase/programming",
       },
     },
-
   },
 }

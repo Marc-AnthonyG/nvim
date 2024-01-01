@@ -1,11 +1,6 @@
 return{
     'ThePrimeagen/harpoon',
     config = function ()
-        vim.api.nvim_set_keymap('n', '<C-a>', '<Nop>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<C-s>', '<Nop>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<C-d>', '<Nop>', { noremap = true, silent = true })
-        vim.api.nvim_set_keymap('n', '<C-f>', '<Nop>', { noremap = true, silent = true })
-
         local ui = require("harpoon.ui")
         local mark = require("harpoon.mark")
         vim.keymap.set("n", "<leader>h", mark.add_file, {desc = '[H]arpoon'})

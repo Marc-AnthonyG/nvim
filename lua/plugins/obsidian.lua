@@ -17,5 +17,18 @@ return {
         path = "~/repository/knowledgeBase/programming",
       },
     },
+    completion = {
+      nvim_cmp = true,
+      min_chars = 2,
+
+      new_notes_location = "notes_subdir",
+
+      prepend_note_id = true,
+      prepend_note_path = false,
+      use_path_only = false,
+    },
+    note_id_func = function(title)
+      return tostring(title)
+    end,
   },
 }

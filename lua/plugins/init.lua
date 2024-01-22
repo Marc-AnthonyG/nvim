@@ -12,6 +12,7 @@ return {
 
   { 'folke/which-key.nvim',  opts = {} },
 
+  { 'AndreM222/copilot-lualine' },
   -- the line you can see at the bottom with the indication of the mode
   {
     'nvim-lualine/lualine.nvim', -- See `:help lualine.txt`
@@ -22,8 +23,12 @@ return {
         component_separators = '|',
         section_separators = '',
       },
+      sections = {
+        lualine_x = {'copilot'},
+      },
     },
   },
+
 
   'nvim-lua/plenary.nvim',
   --Add indentation to blank line See `:help ibl`
@@ -48,6 +53,19 @@ return {
           svn = false,
           cvs = false,
           ["."] = false,
+        },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<Tab>",
+            accept_word = false,
+            accept_line = false,
+            next = "<M-]>",
+            prev = "<M-[>",
+            dismiss = "<C-]>",
+          },
         },
       })
     end,

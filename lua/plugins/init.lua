@@ -10,7 +10,7 @@ return {
 
   'tpope/vim-sleuth',   -- Basicly copy indentation method of the current working directory
 
-  { 'folke/which-key.nvim',                opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
 
   -- the line you can see at the bottom with the indication of the mode
   {
@@ -30,7 +30,26 @@ return {
   --{'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',               opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
-  { 'github/copilot.vim' }
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          help = false,
+          gitcommit = false,
+          gitrebase = false,
+          hgcommit = false,
+          svn = false,
+          cvs = false,
+          ["."] = false,
+        },
+      })
+    end,
+  }
 }
